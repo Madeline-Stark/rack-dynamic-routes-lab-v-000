@@ -9,7 +9,7 @@ class Application
 
     if req.path=="/items"
       added_item = req.path.split("/items/").last
-        if @@item.include?(added_item)
+        if item = @@item.find{|s| s.price == item_price}
             resp.write "#{item.price}"
         else
             resp.write "Item not found"
