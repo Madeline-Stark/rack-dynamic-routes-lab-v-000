@@ -6,7 +6,7 @@ class Application
     req = Rack::Request.new(env)
 
     if req.path=="/items"
-      added_item = req.params["/items/"]
+      added_item = req.params["items"]
         if @@item.include?(added_item)
             resp.write "#{item.price}"
         else
