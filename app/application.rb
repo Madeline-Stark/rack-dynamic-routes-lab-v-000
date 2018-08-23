@@ -2,7 +2,7 @@ require 'pry'
 
 class Application
 
-@@item = []
+#@@item = []
 
   def call(env)
     resp = Rack::Response.new
