@@ -1,4 +1,4 @@
-require 'pry'
+
 class Application
 
 @@item = []
@@ -8,7 +8,6 @@ class Application
     req = Rack::Request.new(env)
 
      if req.path.match(/items/)
-       binding.pry
        item_name = req.path.split("/items/").last
         if item = @@item.find{|i| i.name == item_name}
             resp.write "#{item.price}"
