@@ -1,4 +1,5 @@
 require 'pry'
+
 class Application
 
   def call(env)
@@ -7,8 +8,8 @@ class Application
 
     if req.path=="/items"
       added_item = req.params["items"]
+      binding.pry
         if @@item.include?(added_item)
-          binding.pry
             resp.write "#{item.price}"
         else
             resp.write "Item not found"
