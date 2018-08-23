@@ -1,4 +1,3 @@
-require 'pry'
 
 class Application
 
@@ -8,7 +7,6 @@ class Application
 
     if req.path=="/items"
       added_item = req.params["items"]
-      binding.pry
         if @@item.include?(added_item)
             resp.write "#{item.price}"
         else
